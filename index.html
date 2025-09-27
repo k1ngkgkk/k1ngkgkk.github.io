@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kshitij Goel | KGKK</title>
+  <style>
+    :root {
+      --primary-blue: #3570E5;
+      --highlight-yellow: #ECE000;
+      --bg-light: #ffffff;
+      --bg-dark: #000000;
+      --grid-light: rgba(0,0,0,0.05);
+      --grid-dark: rgba(255,255,255,0.05);
+      --text-light: #000000;
+      --text-dark: #ECE000;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background-color 0.3s, color 0.3s;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: 
+        linear-gradient(to right, var(--grid-light) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-light) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: -1;
+      transition: background-color 0.3s, background-image 0.3s;
+    }
+
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    body.dark::before {
+      background-image: 
+        linear-gradient(to right, var(--grid-dark) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-dark) 1px, transparent 1px);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--primary-blue);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: var(--highlight-yellow);
+    }
+
+    h2 {
+      font-weight: normal;
+      margin-top: 0.2rem;
+      font-size: 1rem;
+      color: var(--primary-blue);
+    }
+
+    .menu {
+      position: relative;
+      display: inline-block;
+    }
+
+    .menu input {
+      display: none;
+    }
+
+    .menu-icon {
+      width: 30px;
+      height: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .menu-icon span {
+      display: block;
+      height: 4px;
+      background: var(--primary-blue);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    nav {
+      position: absolute;
+      right: 0;
+      top: 50px;
+      background: var(--bg-light);
+      border: 1px solid var(--primary-blue);
+      border-radius: 6px;
+      display: none;
+      flex-direction: column;
+      padding: 0.5rem 0;
+      min-width: 150px;
+    }
+
+    nav a {
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      color: var(--primary-blue);
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    nav a:hover {
+      background-color: var(--primary-blue);
+      color: var(--highlight-yellow);
+    }
+
+    .menu input:checked ~ nav {
+      display: flex;
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid var(--primary-blue);
+      border-radius: 4px;
+      background: none;
+      color: var(--primary-blue);
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background: var(--primary-blue);
+      color: var(--highlight-yellow);
+    }
+
+    main {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid var(--primary-blue);
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      border-top: 1px solid var(--primary-blue);
+      color: var(--primary-blue);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kshitij Goel / KGKK</h1>
+    <div>
+      <button class="toggle-btn" id="modeToggle">Dark Mode</button>
+      <div class="menu">
+        <label for="menuToggle" class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <input type="checkbox" id="menuToggle">
+        <nav>
+          <a href="home.html">Home</a>
+          <a href="https://www.youtube.com/@k1ngkgkk" target="_blank">YouTube</a>
+          <a href="projects.html">Projects</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <img src="https://via.placeholder.com/200" alt="Profile Picture" class="profile-pic" id="profilePic">
+    <h2>High School Nerd</h2>
+    <p>Welcome to my personal corner on the web. Check out my projects and YouTube content!</p>
+  </main>
+
+  <footer>
+    © 2025 Kshitij Goel | KGKK
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('modeToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      toggleBtn.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+    });
+  </script>
+</body>
+</html>
