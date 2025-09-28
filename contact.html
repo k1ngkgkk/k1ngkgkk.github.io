@@ -8,7 +8,9 @@
 </head>
 <body>
 <header>
-  <h1>Kshitij Goel / KGKK</h1>
+  <a href="index.html" style="text-decoration: none;">
+    <h1>Kshitij Goel / KGKK</h1>
+  </a>
   <div style="display: flex; align-items: center;">
     <div class="menu">
       <label for="menuToggle" class="menu-icon"><span></span><span></span><span></span></label>
@@ -33,27 +35,8 @@
 </main>
 
 <footer>© 2025 Kshitij Goel | KGKK</footer>
-
-<script>
-const toggleBtn = document.getElementById('modeToggle');
-const menuToggleBtn = document.getElementById('menuToggleBtn');
-const darkPref = localStorage.getItem('darkMode');
-
-if(darkPref === 'true') document.body.classList.add('dark');
-
-function toggleDark() {
-  document.body.classList.toggle('dark');
-  localStorage.setItem('darkMode', document.body.classList.contains('dark'));
-  toggleBtn.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
-}
-
-toggleBtn.addEventListener('click', toggleDark);
-menuToggleBtn.addEventListener('click', toggleDark);
-
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
-  document.body.style.backgroundPosition = `${-scrollY*0.3}px ${-scrollY*0.3}px`;
-});
-</script>
+  
+<script src="script.js"></script> 
+  
 </body>
 </html>
