@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-/* If you are seeing this, you just lost the game
+/* If you are seeing this, you just lost the game*/
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,7 +9,9 @@
 </head>
 <body>
 <header>
-  <h1>Kshitij Goel / KGKK</h1>
+  <a href="index.html" style="text-decoration: none;">
+    <h1>Kshitij Goel / KGKK</h1>
+  </a>
   <div style="display: flex; align-items: center;">
     <div class="menu">
       <label for="menuToggle" class="menu-icon">
@@ -39,6 +41,8 @@
 
     <img src="landscape.jpeg" style="max-width: 100%; height: auto;" alt="Filler image i took">
 
+  <p> </p>
+
   <h3 style="text-align: left;">My Spotify Playlist:</h3>
   <section class="spotify-embed">
     <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3ydftt3P6clv26CCxdFyX6?utm_source=generator&theme=0" width="90%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -49,27 +53,7 @@
   © 2025 Kshitij Goel | KGKK <br>(Yes, I did create this purely out of spite because all my other friends had better PCs so I could flex on them.)
 </footer>
 
-
-<script>
-const toggleBtn = document.getElementById('modeToggle');
-const menuToggleBtn = document.getElementById('menuToggleBtn');
-const darkPref = localStorage.getItem('darkMode');
-
-if(darkPref === 'true') document.body.classList.add('dark');
-
-function toggleDark() {
-  document.body.classList.toggle('dark');
-  localStorage.setItem('darkMode', document.body.classList.contains('dark'));
-  toggleBtn.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
-}
-
-toggleBtn.addEventListener('click', toggleDark);
-menuToggleBtn.addEventListener('click', toggleDark);
-
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
-  document.body.style.backgroundPosition = `${-scrollY*0.3}px ${-scrollY*0.3}px`;
-});
-</script>
+<script src="script.js"></script>
+  
 </body>
 </html>
