@@ -100,7 +100,6 @@ body.dark h1 {
 }
 
 h2, h3 { color: var(--primary-blue); }
-body.dark h2, body.dark h3 { color: var(--text-dark); }
 
 .menu { position: relative; display: inline-block; }
 .menu input { display: none; }
@@ -258,54 +257,8 @@ body.dark .log-date {
     gap: 15px;
     margin-top: 20px;
     position: relative;
-    min-height: 50px;
-    align-items: center;
+    min-height: 200px;
+    align-items: flex-start;
 }
 
-.book-item {
-    width: 120px;
-    height: 40px;
-    border-radius: 4px;
-    position: relative;
-    cursor: pointer;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    transition: transform 0.2s;
-}
-
-.book-item:hover {
-    transform: translateY(-2px);
-}
-
-.book-color-A { background-color: #FF69B4; }
-.book-color-B { background-color: #00FFFF; }
-
-.book-info {
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    min-width: 250px;
-    padding: 8px;
-    background-color: #333333;
-    color: #FFFFFF;
-    border-radius: 4px;
-    font-family: monospace;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s, transform 0.3s;
-    max-width: 0; 
-}
-
-.book-item:hover .book-info {
-    opacity: 1;
-    transform: translateY(0);
-    max-width: 300px;
-    animation: typing 1s steps(40, end) forwards;
-}
-
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
+.
