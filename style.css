@@ -28,16 +28,11 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  --scroll-x: 0px; 
+  --scroll-y: 0px;
 }
 
 p {
-  font-family: "Bitcount Prop Single", system-ui, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.5;
-}
-
-ul {
   font-family: "Bitcount Prop Single", system-ui, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -61,6 +56,7 @@ body::before {
   background-size: 40px 40px;
   pointer-events: none;
   z-index: -1;
+  background-position: var(--scroll-x) var(--scroll-y);
 }
 
 body.dark {
@@ -104,7 +100,7 @@ body.dark h1 {
 }
 
 h2, h3 { color: var(--primary-blue); }
-body.dark h2, body.dark h3 { color: var(--primary-blue); }
+body.dark h2, body.dark h3 { color: var(--text-dark); }
 
 .menu { position: relative; display: inline-block; }
 .menu input { display: none; }
@@ -116,7 +112,9 @@ nav {
   position: absolute; right: 0; top: 50px; 
   background: var(--bg-light); border: 1px solid var(--primary-blue); 
   border-radius: 6px; display: none; flex-direction: column; 
-  padding: 0.5rem 0; min-width: 150px; z-index: 10;
+  padding: 0.5rem 0; 
+  min-width: 170px;
+  z-index: 10;
 }
 body.dark nav { 
   background: var(--bg-dark); 
@@ -153,11 +151,11 @@ main {
 }
 .profile-pic { 
   width: 200px; height: 200px; border-radius: 50%; 
-  border: 4px solid #808080; 
+  border: 4px solid var(--primary-blue); 
   object-fit: cover; margin-bottom: 1.5rem; 
 }
 body.dark .profile-pic {
-  border-color: #808080;
+  border-color: var(--text-dark);
 }
 
 section { margin: 3rem 0; text-align: left; }
@@ -178,4 +176,136 @@ footer {
   background-color: var(--header-footer-bg);
   border-top: 1px solid var(--header-footer-text); 
   color: var(--header-footer-text); 
+}
+
+.visitor-counter {
+  background-color: #880088;
+  border: 2px dashed #00FF00;
+  padding: 10px 15px;
+  margin: 4rem auto 2rem auto;
+  max-width: 250px;
+  text-align: center;
+  font-family: 'Bitcount Prop Single', monospace;
+  color: #FFFF00;
+  box-shadow: 5px 5px 0px 0px #000000;
+  animation: flicker 1.5s infinite alternate;
+}
+
+.visitor-counter p {
+  margin: 0 0 8px 0;
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+body.dark .visitor-counter {
+    background-color: #550055;
+    border-color: #00AA00;
+    color: #DDDD00;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.95; }
+}
+
+.log-section {
+    padding: 2rem;
+    margin: 3rem 0;
+    border: 1px solid var(--primary-blue);
+    border-radius: 8px;
+    text-align: left;
+    position: relative;
+}
+
+body.dark .log-section {
+    border-color: var(--text-dark);
+}
+
+.log-date {
+    position: absolute;
+    top: -0.75rem;
+    left: 1rem;
+    background: var(--bg-light);
+    color: var(--primary-blue);
+    padding: 0 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+body.dark .log-date {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+.log-section h3 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.log-section ul {
+    list-style: square;
+    padding-left: 20px;
+    margin-top: 1rem;
+}
+
+.log-section li {
+    margin-bottom: 0.5rem;
+}
+
+.book-list {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    position: relative;
+    min-height: 50px;
+    align-items: center;
+}
+
+.book-item {
+    width: 120px;
+    height: 40px;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s;
+}
+
+.book-item:hover {
+    transform: translateY(-2px);
+}
+
+.book-color-A { background-color: #FF69B4; }
+.book-color-B { background-color: #00FFFF; }
+
+.book-info {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    min-width: 250px;
+    padding: 8px;
+    background-color: #333333;
+    color: #FFFFFF;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s;
+    max-width: 0; 
+}
+
+.book-item:hover .book-info {
+    opacity: 1;
+    transform: translateY(0);
+    max-width: 300px;
+    animation: typing 1s steps(40, end) forwards;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
 }
