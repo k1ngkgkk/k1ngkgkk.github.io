@@ -261,4 +261,45 @@ body.dark .log-date {
     align-items: flex-start;
 }
 
-.
+.book-item {
+    width: 60px;
+    height: 150px;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.book-color-A { background-color: #FF69B4; }
+.book-color-B { background-color: #00FFFF; }
+
+.book-info {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    min-width: 250px;
+    width: auto;
+    max-width: 350px;
+    padding: 8px 12px;
+    background-color: #333333;
+    color: #FFFFFF;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    white-space: normal;
+    overflow: visible;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.book-item:hover .book-info {
+    opacity: 1;
+    transform: translateY(0);
+}
