@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double:wght@100..900&family=Bitcount+Prop+Single:wght@100..900&display=swap');
+
+body {
+  font-family: 'Bitcount Prop Single', system-ui, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #121212;
+  color: #e0e0e0;
+  margin: 10px;
+  padding: 10px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bitcount Prop Double', system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+p {
+   font-family: 'Bitcount Prop Single', system-ui, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #121212;
+  color: #e0e0e0;
+  margin: 10px;
+  padding: 10px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+header, footer {
+  padding: 15px 20px;
+  background-color: #1e1e1e;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin: 15px 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #bb86fc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
