@@ -6,8 +6,8 @@
   --highlight-yellow: #ECE000;
   --bg-light: #ffffff;
   --bg-dark: #000000;
-  --grid-light: rgba(0,0,0,0.05);
-  --grid-dark: rgba(255,255,255,0.05);
+  --grid-light: rgba(0,0,0,0.0.05);
+  --grid-dark: rgba(255,255,255,0.15);
   --text-light: #000000;
   --text-dark: #ECE000;
   
