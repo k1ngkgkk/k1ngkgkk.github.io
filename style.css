@@ -222,6 +222,9 @@ body.dark .visitor-counter {
 }
 
 .log-section {
+    font-family: "Bitcount Prop Single", system-ui, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     padding: 2rem;
     margin: 3rem 0;
     border: 1px solid var(--primary-blue);
@@ -242,7 +245,9 @@ body.dark .log-section {
     color: var(--primary-blue);
     padding: 0 0.5rem;
     font-size: 0.8rem;
-    font-weight: bold;
+    font-family: "Bitcount Prop Single", system-ui, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     text-transform: uppercase;
 }
 
@@ -252,11 +257,17 @@ body.dark .log-date {
 }
 
 .log-section h3 {
+    font-family: "Bitcount Prop Single", system-ui, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     margin-top: 0;
     padding-top: 0;
 }
 
 .log-section ul {
+    font-family: "Bitcount Prop Single", system-ui, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     list-style: square;
     padding-left: 20px;
     margin-top: 1rem;
