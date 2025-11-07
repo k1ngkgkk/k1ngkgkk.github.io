@@ -301,8 +301,11 @@ body.dark .log-date {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
 }
 
-.book-color-A { background-color: #FF69B4; }
-.book-color-B { background-color: #00FFFF; }
+.book-color-A { background-color: #961F1F; }
+.book-color-B { background-color: #1B1B9B; }
+.book-color-C { background-color: #216330; }
+.book-color-D { background-color: #C23B85; }
+.book-color-E { background-color: #CFA31A; }
 
 .book-info {
     position: absolute;
